@@ -5,7 +5,7 @@ for tc in range(T):
 
     c = [0] * 12
 
-    for _ in range(6):
+    for _ in range(6): # 각 자리에 원하는 숫자들을 넣는 방법
         c[n % 10] += 1
         n //= 10
 
@@ -32,3 +32,4 @@ for tc in range(T):
         answer = 'Lose'
 
     print(answer)
+
