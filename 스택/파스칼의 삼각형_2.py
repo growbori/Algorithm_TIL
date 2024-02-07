@@ -9,6 +9,7 @@ for tc in range(T):
             if j != 0 and i != j:
                 arr[i][j] = arr[i-1][j-1] + arr[i-1][j]
 
-print(f'#{tc+1}')
-for i in range(1, n):
-    print(*arr[i])
+    print(f'#{tc+1}')
+    for i in range(n):
+        print(*arr[i])
+
