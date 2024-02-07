@@ -37,5 +37,5 @@ for tc in range(10):
     # print(answer)
     new_answer = ''.join(answer)
 
-    print(f'#{tc+1} {int(new_answer)}')
+    print(f'#{tc+1} {(new_answer)}')
 
