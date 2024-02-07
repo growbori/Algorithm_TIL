@@ -17,7 +17,7 @@ def pop():
 
 
 for tc in range(10):
-    N, number = map(int, input().split())
+    N, number = map(str, input().split()) # 처음 받을 때 문자열로 받으면 앞에 0이 오는 오류를 막을 수 있음
     size = len(str(number))
     stack = [0] * size
     top = -1
@@ -37,5 +37,5 @@ for tc in range(10):
     # print(answer)
     new_answer = ''.join(answer)
 
-    print(f'#{tc+1} {(new_answer)}')
+    print(f'#{tc+1} {int(new_answer)}')
 
