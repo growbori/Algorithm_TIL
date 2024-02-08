@@ -22,8 +22,8 @@ def dfs(i, V): # 시작 i, 마지막 V
                 break   # while True
     return
 
-V, E = map(int, input().split())
-arr =list(map(int, input().split()))
+V, E = map(int, input().split()) # V 1~7 까지 숫자, E 노드의 수
+arr =list(map(int, input().split())) # 2개씩 연결된 노드들을 전부 나열한 것
 
 # 인접리스트
 adjl = [[] for _ in range(V+1)] # ardjl[i] 행에 i에 인접인 정점번호
