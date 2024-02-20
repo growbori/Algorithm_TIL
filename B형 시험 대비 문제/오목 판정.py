@@ -11,32 +11,47 @@ for tc in range(T):
     omok = 0
 
     for i in range(N):
+        vertical = ''
+        horizon = ''
         for j in range(N):
-            vertical = ''
-            for x in range(5):
-                vertical += arr[x][j]
-                if vertical == 'ooooo':
-                    omok += 1
-            horizon = ''
-            for y in range(5):
-                horizon += arr[i][y]
-                if horizon == 'ooooo':
-                    omok += 1
-
-            diagonal = ''
-            diagonal += arr[i][i]
-            if diagonal == 'ooooo':
+            vertical += arr[i][j]
+            if 'ooooo' in vertical:
                 omok += 1
 
+            horizon += arr[j][i]
+            if 'ooooo' in horizon:
+                omok += 1
+
+
+    for i in range(N-5+1):
+        for j in range(N-5+1):
+            diagonal = ''
             diagonal_reverse = ''
-            for z in range(5):
-                diagonal_reverse += arr[j][j]
-                if diagonal_reverse == 'ooooo':
-                    omok += 1
+            for x in range(5):
+                for y in range(5):
+                    if x == y:
+                        diagonal += arr[i + x][j + y]
+                        if 'ooooo' in diagonal:
+                            omok += 1
+                    if x + y == 4:      # 	(0, 4) (1, 3) (2, 2) (3, 1) (4, 0) 일때 역대각선이 성립
+                        diagonal_reverse += arr[i + x][j + y]
+                        if 'ooooo' in diagonal_reverse:
+                            omok += 1
+
     if omok >= 1:
         answer = 'YES'
     else:
         answer = 'NO'
 
-
     print(f'#{tc+1} {answer}')
+
+
+'''
+예상 오류 케이스
+x o x  x x
+x x o x x x
+x x x o x x
+x x x x o x
+x x x x x o
+x x x x x x 
+'''
