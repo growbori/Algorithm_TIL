@@ -24,14 +24,14 @@ for tc in range(T):
     new_arr.sort()
     # print(new_arr)
     change_arr = ['ZRO' if x == 0 else x for x in new_arr]
-    change_arr = ['ONE' if x == 0 else x for x in change_arr]
-    change_arr = ['TWO' if x == 0 else x for x in change_arr]
-    change_arr = ['THR' if x == 0 else x for x in change_arr]
-    change_arr = ['FOR' if x == 0 else x for x in change_arr]
-    change_arr = ['FIV' if x == 0 else x for x in change_arr]
-    change_arr = ['SIX' if x == 0 else x for x in change_arr]
-    change_arr = ['SVN' if x == 0 else x for x in change_arr]
-    change_arr = ['EGT' if x == 0 else x for x in change_arr]
-    change_arr = ['NIN' if x == 0 else x for x in change_arr]
+    change_arr = ['ONE' if x == 1 else x for x in change_arr]
+    change_arr = ['TWO' if x == 2 else x for x in change_arr]
+    change_arr = ['THR' if x == 3 else x for x in change_arr]
+    change_arr = ['FOR' if x == 4 else x for x in change_arr]
+    change_arr = ['FIV' if x == 5 else x for x in change_arr]
+    change_arr = ['SIX' if x == 6 else x for x in change_arr]
+    change_arr = ['SVN' if x == 7 else x for x in change_arr]
+    change_arr = ['EGT' if x == 8 else x for x in change_arr]
+    change_arr = ['NIN' if x == 9 else x for x in change_arr]
 
     print(*change_arr)
