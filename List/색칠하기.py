@@ -1,25 +1,30 @@
 '''
-10 * 10 격자에 빨간색과 파란색을 칠하고자 한다.
-N개의 영역에 칠한 후 보라색이 겹쳐지는 부분을 구하시오
+10*10 격자에 빨간색과 파란색을 칠하고자 한다.
+칠이 끝난 후 빨간색 영역과 파란색 영역의 외곽 길이를 구하는 프로그램을 구하시오
+=> 두 사각형 외곽의 길이 합을 구하면 됨
 '''
 
 T = int(input())
-
 for tc in range(T):
     N = int(input())
-    arr = [list(map(int, input().split())) for _ in range(N)]
     color_map = [[0] * 10 for _ in range(10)]
-    for i in range(N):
-        c1, a1, c2, a2, color = arr[i][0], arr[i][1], arr[i][2], arr[i][3], arr[i][4]
 
-        for x in range(c1, c2+1):
-            for y in range(a1, a2+1):
-                color_map[x][y] += color
-    result = 0
+    for _ in range(N):
+        c1, a1, c2, a2, color = list(map(int, input().split()))
+
+        for i in range(c1, c2+1):
+            for j in range(a1, a2+1):
+                color_map[i][j] += color
+
+    total = 0
     for i in range(10):
         for j in range(10):
-            if color_map[i][j] == 3:
-                result += 1
+            if color_map[i][j] == 1 or color_map[i][j] == 2:
+                for di, dj in [[0, 1], [1, 0], [0, -1], [-1, 0]]:
+                    ni, nj = i + di, j + dj
+                    if 0 <= ni < 10 and 0 <= nj < 10 and color_map[i][j] != color_map[ni][nj]:
+                        total += 1
+                    elif ni < 0 or ni >= 10 or nj < 0 or nj >= 10:
+                        total += 1
 
-    print(result)
-
+    print(f'#{tc+1} {total}')
