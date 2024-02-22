@@ -3,7 +3,7 @@ for tc in range(T):
     N, M = map(int, input().split())
     arr = [list(map(int, input().split())) for _ in range(N)]
     total = 0
-    cnt = 0
+
     for i in range(N):
         for j in range(M):
             cnt = 0
