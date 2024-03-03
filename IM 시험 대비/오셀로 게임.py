@@ -1,6 +1,6 @@
 dx = [0, 1, 0, -1, 1, 1, -1, -1]
-dy = [1, 0, -1, 0, 1, -1, 1, -1]
-op = [0, 2, 1]
+dy = [1, 0, -1, 0, 1, -1, -1, 1]
+op =[0, 2, 1]
 T = int(input())
 for tc in range(T):
     N, M = map(int, input().split())
@@ -17,24 +17,21 @@ for tc in range(T):
 
     for i, j, wb in play:
         board[i-1][j-1] = wb
-
         for k in range(8):
             nx = i-1 + dx[k]
             ny = j-1 + dy[k]
             flip = []
-
             while 0 <= nx < N and 0 <= ny < N and board[nx][ny] == op[wb]:
                 flip.append((nx, ny))
                 nx = nx + dx[k]
                 ny = ny + dy[k]
 
-                if 0 <= nx < N and 0 <= ny < N and board[nx][ny] == wb:
-                    for p, q in flip:
-                        board[p][q] = wb
+            if 0 <= nx < N and 0 <= ny < N and board[nx][ny] == wb:
+                for p, q in flip:
+                    board[p][q] = wb
 
     cnt_b = 0
     cnt_w = 0
-
     for x in range(N):
         for y in range(N):
             if board[x][y] == B:

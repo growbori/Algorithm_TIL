@@ -1,8 +1,3 @@
-'''
-기지국에 커버되지 않는 집의 수를 구하고자 한다.
-A, B, C를 기준으로 동서남북으로 1, 2, 3개를 커버하는 기지국이다. x인 원소는 아무것도 없다는 것을 의미
-'''
-
 T = int(input())
 for tc in range(T):
     N = int(input())
@@ -10,8 +5,7 @@ for tc in range(T):
 
     dx = [0, 1, 0, -1]
     dy = [1, 0, -1, 0]
-
-    # A 근처 H제거
+    # A 주위 기지국 X로 변경
     for i in range(N):
         for j in range(N):
             if arr[i][j] == 'A':
@@ -22,7 +16,7 @@ for tc in range(T):
                         if 0 <= nx < N and 0 <= ny < N and arr[nx][ny] == 'H':
                             arr[nx][ny] = 'X'
 
-    # B 근처 H제거
+    # B 주위 기지국 X로 변경
     for i in range(N):
         for j in range(N):
             if arr[i][j] == 'B':
@@ -33,7 +27,7 @@ for tc in range(T):
                         if 0 <= nx < N and 0 <= ny < N and arr[nx][ny] == 'H':
                             arr[nx][ny] = 'X'
 
-    # C 근처 H제거
+    # C 주위 기지국 X로 변경
     for i in range(N):
         for j in range(N):
             if arr[i][j] == 'C':
@@ -44,10 +38,10 @@ for tc in range(T):
                         if 0 <= nx < N and 0 <= ny < N and arr[nx][ny] == 'H':
                             arr[nx][ny] = 'X'
 
-    # H 갯수 카운트
-    count = 0
-    for i in range(N):
-        for j in range(N):
-            if arr[i][j] == 'H':
-                count += 1
-    print(f'#{tc+1} {count}')
+    result = 0
+    for x in range(N):
+        for y in range(N):
+            if arr[x][y] == 'H':
+                result += 1
+
+    print(result)

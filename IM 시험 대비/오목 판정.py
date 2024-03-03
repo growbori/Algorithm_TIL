@@ -8,12 +8,11 @@ for tc in range(T):
     answer = 'NO'
     for i in range(N):
         for j in range(N):
-            for k in range(4):
+            for k in range(4):  # 순서 바꿔 적으면 답이 달라짐!
                 if arr[i][j] == 'o':
                     count = 1
                     nx = i + dx[k]
                     ny = j + dy[k]
-
                     while 0 <= nx < N and 0 <= ny < N and arr[nx][ny] == 'o':
                         count += 1
                         nx = nx + dx[k]
@@ -22,5 +21,4 @@ for tc in range(T):
                     if count == 5:
                         answer = 'YES'
 
-
-    print(f'#{tc+1} {answer}')
+    print(f'{tc+1} {answer}')

@@ -13,9 +13,8 @@ for tc in range(T):
                 nx = i + dx[k]
                 ny = j + dy[k]
 
-                if 0 <= nx < N and 0 <= ny < M and arr[i][j] > arr[nx][ny]:
+                if 0 <= nx < N and 0 <= ny < M and arr[nx][ny] < arr[i][j]:
                     count += 1
-
             if count >= 4:
                 total += 1
 

@@ -1,4 +1,4 @@
-for tc in range(10):
+for tc in range(1, 11):
     N = int(input())
     table = [list(map(int, input().split())) for _ in range(N)]
     cnt = 0
@@ -16,4 +16,4 @@ for tc in range(10):
                 cnt += 1
             previous = now
 
-    print(cnt)
+    print(f'#{tc} {cnt}')

@@ -6,10 +6,9 @@ for tc in range(T):
     for i in range(N-M+1):
         for j in range(N-M+1):
             count = 0
-            for x in range(i, i + M):
+            for x in range(i, i+M):
                 for y in range(j, j+M):
                     count += arr[x][y]
-
             if max_count < count:
                 max_count = count
 

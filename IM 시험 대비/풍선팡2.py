@@ -9,12 +9,11 @@ for tc in range(T):
     for i in range(N):
         for j in range(M):
             count = arr[i][j]
-            for p in range(1, arr[i][j]+1):
-                for k in range(4):
-                    nx = i + dx[k] * p
-                    ny = j + dy[k] * p
-                    if 0 <= nx < N and 0 <= ny < M:
-                        count += arr[nx][ny]
+            for k in range(4):
+                nx = i + dx[k]
+                ny = j + dy[k]
+                if 0 <= nx < N and 0 <= ny < M:
+                    count += arr[nx][ny]
 
             if max_count < count:
                 max_count = count
